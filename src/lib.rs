@@ -21,10 +21,10 @@ use scilib::math::bessel;
 ///
 pub fn skellam_pmf(k: i32, mu1: f64, mu2: f64) -> f64 {
     // Parameterise and compute the Modified Bessel function of the first kind
-    let nu = 2.0 * (mu1 * mu2).sqrt();
-    let z = Complex64::new(k as f64, 0.0);
+    let nu = k as f64;
+    let z = Complex64::new(2.0 * (mu1 * mu2).sqrt(), 0.0);
     let bessel = bessel::i_nu(nu, z);
 
     // Compute the pmf
-    (-(mu1 + mu2)).exp() * (mu1 / mu2).powf(k as f64 / 2.0) * bessel.abs()
+    (-(mu1 + mu2)).exp() * (mu1 / mu2).powf(k as f64 / 2.0) * bessel.re()
 }
