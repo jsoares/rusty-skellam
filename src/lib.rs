@@ -1,6 +1,3 @@
-// Copyright 2024 Protocol Labs
-// SPDX-License-Identifier: MIT
-
 use num_complex::{Complex64, ComplexFloat};
 use scilib::math::bessel;
 

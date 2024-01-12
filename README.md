@@ -1,5 +1,8 @@
 # rusty-skellam
-Makeshift Rust implementation of Skellam Distribution's PMF.
+
+Trivial Rust implementation of the PMF for the [Skellam Distribution](https://en.wikipedia.org/wiki/Skellam_distribution).
+
+Its precision is limited by the underlying [scilib](https://github.com/At0micBee/scilib) Bessel function.
 
 ## Usage
 
@@ -23,6 +26,7 @@ pub fn skellam_pmf(k: i32, mu1: f64, mu2: f64) -> f64
 ```
 
 ## Example
+
 ```rust
 let k: i32 = 2;
 let mu1: f64 = 1.0;
